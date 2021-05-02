@@ -16,6 +16,10 @@ body {
     background: white url(https://source.unsplash.com/uXtq8xGUX5U) center center/cover no-repeat;
 }
 
+#nova {
+    background: white;
+}
+
 a {
     color: black;
     text-decoration: none;

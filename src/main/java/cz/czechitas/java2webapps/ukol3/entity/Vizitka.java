@@ -12,10 +12,10 @@ public class Vizitka {
     private String email;
     private String telefon;
     private String web;
-//    odvozené fieldy
-    private String obecPsc;
-    private String celaAdresa;
-    private String uliceObec;
+//    odvozené fieldy - nejsou třeba (stačí v gettru)
+//    private String obecPsc;
+//    private String celaAdresa;
+//    private String uliceObec;
 
 //bezparametrový konstruktor
 
@@ -35,10 +35,10 @@ public class Vizitka {
         this.telefon = telefon;
         this.web = web;
 
-//      odvozené fieldy
-        obecPsc = obec + " " + psc;
-        celaAdresa = ulice + ", " + obec;
-        uliceObec = ulice + ", " + obec;
+//      odvozené fieldy - není třeba (stačí v gettru)
+//        obecPsc = obec + " " + psc;
+//        celaAdresa = ulice + ", " + obecPsc;
+//        uliceObec = ulice + ", " + obec;
     }
 
 //    gettry a settry
@@ -106,17 +106,28 @@ public class Vizitka {
         this.web = web;
     }
 
-//    jen gettry pro fieldy určené jen pro čtení
+//    jen gettry pro fieldy určené jen pro čtení - stačí je definovat v gettru
+//    tím mám vlastnost (property), kterou můžu načítat v thymeleaf
+    
+//    public String getObecPsc() {
+//        return obecPsc;
+//    }
     public String getObecPsc() {
-        return obecPsc;
+        return obec + " " + psc;
     }
 
+//    public String getCelaAdresa() {
+//        return celaAdresa;
+//    }
     public String getCelaAdresa() {
-        return celaAdresa;
+        return ulice + ", " + obec + ", " + psc;
     }
 
+//    public String getUliceObec() {
+//        return uliceObec;
+//    }
     public String getUliceObec() {
-        return uliceObec;
+        return ulice + ", " + obec;
     }
 
 }

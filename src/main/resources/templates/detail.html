@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
 <div class="detail">
@@ -31,6 +33,15 @@
     <div class="mapa">
 <!--        <iframe style="border:none" th:src="@{https://frame.mapy.cz/(q='Václavské náměstí 837/11, Praha')}" width="100%" height="100%" frameborder="0"></iframe>-->
         <iframe style="border:none" th:src="@{https://frame.mapy.cz/(q=${vizitka.uliceObec})}" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+<!-- Formulář na smazání vizitky -->
+    <div>
+        <form th:action="@{/smaz}" method="post">
+            <input type="hidden" name="id" th:value="${id}">
+            <div>
+                <button type="submit" class="btn btn-primary">Smaž</button>
+            </div>
+        </form>
     </div>
 
 </div>
