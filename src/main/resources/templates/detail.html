@@ -36,7 +36,8 @@
     </div>
 <!-- Formulář na smazání vizitky -->
     <div>
-        <form th:action="@{/smaz}" method="post">
+<!--        <form th:action="@{/smaz}" method="post">-->
+        <form th:action="@{/detail}" method="post">
             <input type="hidden" name="id" th:value="${id}">
             <div>
                 <button type="submit" class="btn btn-primary">Smaž</button>
